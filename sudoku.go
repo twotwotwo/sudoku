@@ -6,28 +6,17 @@ import (
 	"time"
 )
 
-var WeirdPuzzle = NewPuzzle(`
-__53_____
-8______2_
-_7__1_5__
-4____53__
-_1__7___6
-__32___8_
-_6_5____9
-__4____3_
-_____97__
+var SamplePuzzle = NewPuzzle(`
+[0 0 0 6 0 0 0 0 0]
+[0 0 1 0 0 4 2 0 0]
+[2 3 0 0 0 0 8 0 9]
+[0 0 0 0 0 5 0 4 3]
+[0 0 0 2 8 0 1 0 0]
+[9 0 0 0 0 0 0 0 0]
+[0 2 5 4 0 0 0 0 0]
+[8 0 0 0 0 9 0 0 2]
+[1 0 0 0 5 0 0 0 0]
 `)
-
-var NormalPuzzle = NewPuzzle(`
-_3__7__6_
-__79_81__
-8___4___9
-1__2_4__5
-__5___2__
-2__3_6__7
-3___8___2
-__85_97__
-_9__2__5_`)
 
 type Puzzle []byte
 type SolutionList []Puzzle
@@ -442,7 +431,7 @@ func (p Puzzle) HintCount() (hc int) {
 }
 
 func kitchenSink() {
-	puzzle := WeirdPuzzle
+	puzzle := SamplePuzzle
 	orig := append(Puzzle(nil), puzzle...)
 	fmt.Print("The puzzle:\n", puzzle, "\n")
 	fmt.Println(orig.HintCount(), "hints")
